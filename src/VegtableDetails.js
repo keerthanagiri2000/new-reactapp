@@ -32,8 +32,8 @@ export function VegtableDetails({ vegList}){
         <hr className="horizontal-line"/>
         <div className="vegtable-weight-policy">
             <h4 className="vegtable-title">Variable weight policy</h4>
-            <div className="weight-pic"><img src="https://static.thenounproject.com/png/96048-200.png" alt="weight-icon" className="weight-image" /></div>
-            <div className="weight-content"><p className="vegtable-paragraph">{veg.variableWeight}</p></div>
+            <img src="https://static.thenounproject.com/png/96048-200.png" alt="weight-icon" className="weight-image" />
+            <p className="vegtable-paragraph">{veg.variableWeight}</p>
             
         </div>
         <Button variant="contained" onClick={()=> history.goBack()} startIcon={<ArrowBackIosNewIcon />}>
