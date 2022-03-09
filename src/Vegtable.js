@@ -8,7 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import InfoIcon from '@mui/icons-material/Info';
 import {useHistory} from 'react-router-dom';
-
+import Paper from '@mui/material/Paper';
 
 export function Vegtable({ name, image, weight, price, deleteBtn, id, editBtn}) {
   const [like, setLike] = useState(0);
@@ -18,7 +18,7 @@ export function Vegtable({ name, image, weight, price, deleteBtn, id, editBtn}) 
 
     <div>
       <Card className="vegtable-container">
-
+      
       <div className="dot-icon">
           <IconButton onClick={() => setIsOpen(!isOpen)} aria-label="delete" style={{ marginLeft: "290px" }}>
             <MoreVertIcon style={{ color: "lightgray" }} />
@@ -34,7 +34,7 @@ export function Vegtable({ name, image, weight, price, deleteBtn, id, editBtn}) 
           )}
 
         </div>
-
+        
         <img src={image} alt="veg-image" className='vegtable-img' />
         <CardContent>
         <div className="vegtable-name-info">

@@ -43,6 +43,7 @@ body{
   padding: 5px;
   display:flex;
   font-size: 14px;
+  color:black;
 }
 .list-items:hover{
   color: rgb(172, 151, 151);
