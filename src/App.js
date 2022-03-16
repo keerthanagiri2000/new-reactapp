@@ -34,8 +34,8 @@ export default function App() {
         <AppBar position="static">
         <Toolbar>
           <Button color="inherit" onClick={() => history.push("/")}>Home</Button>
-          <Button color="inherit" onClick={() => history.push("/vegtable")}>vegtable</Button>
-          <Button color="inherit" onClick={() => history.push("/vegtable/add")}>Add Vegtable</Button>
+          <Button color="inherit" onClick={() => history.push("/vegtables")}>vegtable</Button>
+          <Button color="inherit" onClick={() => history.push("/vegtables/add")}>Add Vegtable</Button>
           <Button
           color="inherit"
           style={{marginLeft:"auto"}} 
@@ -51,18 +51,18 @@ export default function App() {
               <h1>Welcome to my Veggie Shop</h1>
               <Slideshow />
           </Route>
-          <Route path="/vegtable/add">
-               <AddVegtable vegList={vegList} setVegList={setVegList} />
+          <Route path="/vegtables/add">
+               <AddVegtable  />
           </Route>
           
-          <Route path="/vegtable/edit/:id">
-               <EditVegtable vegList={vegList} setVegList={setVegList} />
+          <Route path="/vegtables/edit/:id">
+               <EditVegtable />
           </Route>
-          <Route path="/vegtable/:id">
-               <VegtableDetails vegList={vegList} />
+          <Route path="/vegtables/:id">
+               <VegtableDetails />
           </Route>
-          <Route path="/vegtable">
-              <Vegtablelist vegList={vegList} setVegList={setVegList} />
+          <Route path="/vegtables">
+              <Vegtablelist />
           </Route>
           
         </Switch>

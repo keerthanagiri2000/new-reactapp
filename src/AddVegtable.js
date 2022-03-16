@@ -2,6 +2,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import {API} from "./global";
 
 export function AddVegtable({ vegList, setVegList }) {
   const [name, setName] = useState("")
@@ -25,8 +26,16 @@ export function AddVegtable({ vegList, setVegList }) {
           weight: weight,
           price: price
         };
-        setVegList([...vegList, newVegtable]);
-        history.push("/vegtable");
+
+        fetch(`${API}/vegtables/`, {
+          method: "POST",
+          body: JSON.stringify(newVegtable),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then(()=> history.push("/vegtables"));
+        //setVegList([...vegList, newVegtable]);
+        
       }}
         variant="contained">Add Vegtable</Button>
     </div>

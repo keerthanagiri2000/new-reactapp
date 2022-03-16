@@ -2,11 +2,24 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Button from '@mui/material/Button';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import {useState, useEffect} from "react";
+import {API} from "./global";
 
-export function VegtableDetails({ vegList}){
+export function VegtableDetails(){
     const { id } = useParams();
-    console.log(id, vegList);
-    const veg = vegList[id];
+    //console.log(id, vegList);
+    //const veg = vegList[id];
+    const [veg, setVeg]=useState({});
+     
+    useEffect(()=>{
+        fetch(`${API}/vegtables/${id}`, {
+            method: "GET",
+        })
+        .then((data) => data.json())
+        .then((vegg)=> setVeg(vegg))
+        .catch((err) => console.log(err));
+    }, []);
+
     const history = useHistory();
 
     return(
