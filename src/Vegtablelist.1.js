@@ -13,7 +13,7 @@ export function Vegtablelist() {
     fetch(`${API}/vegtables`, {
       method: "GET",
     })
-    .then(data => data.json())
+    .then((data) => data.json())
     .then((vegs) => setVegList(vegs));
   }
 

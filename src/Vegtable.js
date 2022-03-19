@@ -42,7 +42,7 @@ export function Vegtable({ name, image, weight, price, deleteBtn, id, editBtn}) 
            <div className="veg-infobtn">
            <IconButton
               color="primary"
-              onClick={() => history.push(`/vegtable/${id}`)}
+              onClick={() => history.push(`/vegtables/${id}`)}
               aria-label="info-details">
               <InfoIcon />
             </IconButton>
